@@ -26,6 +26,8 @@ function Loginpage() {
     return errors;
   }
 
+  var Product=[{id:1,name:"ram"},{id:2,name:"siya"}]
+
   function handleForm(values, actions) {
     const formData = {
       email: values.email,
@@ -36,8 +38,9 @@ function Loginpage() {
     .then(response=>{
         console.log(response)
         if(response.status===200){
-             const ApiData=response.data;
-             setApivalue(ApiData);
+            //  const ApiData=response.data;
+            localStorage.setItem('product',JSON.stringify(Product))
+             setApivalue(Product);
              Login();
              navigate('/bookpage')
         }

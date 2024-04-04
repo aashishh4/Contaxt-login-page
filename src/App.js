@@ -7,14 +7,13 @@ import Bookpage from './component/Bookpage';
 
 function App() {
 
-  const {islogin} = useAuth();
+  const {isLogin} = useAuth();
   const [login, setislogin] = useState(localStorage.getItem('login') === 'true');
 
   useEffect(() => {
-    setislogin(islogin)
-  }, [islogin])
- 
-  return (
+    setislogin(isLogin)
+  }, [isLogin])
+    return (
       <div>
         <Routes>
           <Route
@@ -26,5 +25,7 @@ function App() {
       </div>
   );
 }
+  
+
 
 export default App;
